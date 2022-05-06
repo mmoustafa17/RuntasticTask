@@ -1,4 +1,5 @@
 # Runtastic
+<img src="images\AdiLogo.png" style="display:block; margin-left:auto; margin-right:auto;"/>
 
 # Automation FrameWork
 FrameWork using Appium with Java , Maven , TestNG and POM design pattern
