@@ -16,7 +16,7 @@ Feature: User can use the Adidas membership
     Given I have existing UserName and password
     When User set the permissions
     And User go to profile tab
-    Then User make sure he have 50 points point and on LEVEL 1
+    Then User make sure he has 50 points point and on LEVEL 1
 
   @REQ-ADICLUB-3 @LogOutFromApp
   Scenario: User check adiClub pass from show more details on his profile

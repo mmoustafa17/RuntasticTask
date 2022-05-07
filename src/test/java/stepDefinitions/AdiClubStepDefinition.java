@@ -61,7 +61,7 @@ public class AdiClubStepDefinition extends TestBase {
         ProfilePageObject.goToPointsInfoViewScreen();
     }
 
-    @Then("^User make sure he have (.*) point and on (.*)$")
+    @Then("^User make sure he has (.*) point and on (.*)$")
     public void userMakeSureHeHasPointsAndOnLevel(String expectedPoints,String currentLevel){
         Helper.assertEquals(expectedPoints,ProfilePageObject.getTotalPointsText(),1,true);
         Helper.assertEquals(currentLevel,ProfilePageObject.getCurrentLevelText(),1,true);
