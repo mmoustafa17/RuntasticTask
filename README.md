@@ -21,6 +21,7 @@ We are using DDT frameworks in the project with allure report
 - Cucumber
 - BDD
 - IntelliJ as IDE
+- Android studio
 
 ### Description
 1-Test data are stored in --> \src\test\resources\TestDataFiles
