@@ -56,7 +56,12 @@ public class AdiClubStepDefinition extends TestBase {
         ProfilePageObject.clickGotItButton();
     }
 
-    @Then("^User make sure he have (.*) point and on (.*)$")
+    @And("^User go to how to earn points screen")
+    public void userGoToHowToEarnPointsScreen(){
+        ProfilePageObject.goToPointsInfoViewScreen();
+    }
+
+    @Then("^User make sure he has (.*) point and on (.*)$")
     public void userMakeSureHeHasPointsAndOnLevel(String expectedPoints,String currentLevel){
         Helper.assertEquals(expectedPoints,ProfilePageObject.getTotalPointsText(),1,true);
         Helper.assertEquals(currentLevel,ProfilePageObject.getCurrentLevelText(),1,true);
@@ -86,6 +91,12 @@ public class AdiClubStepDefinition extends TestBase {
     @Then("^User validate that his adiClub pass displayed (.*)$")
     public void userMakeSureHisAdiClubPassDisplayed(String adiClubPass){
         Helper.assertEquals(adiClubPass,ProfilePageObject.getAdiClubPassNumberText(),1,true);
+        ProfilePageObject.navigateBackToProfileScreen();
+    }
+
+    @Then("^User validate the is in how to earn points screen (.*)$")
+    public void userMakeSureHisOnHowToEarnPointsScreen(String expectedResult){
+        Helper.assertEquals(expectedResult,ProfilePageObject.getHowToEarnPointsHeaderText(),1,true);
         ProfilePageObject.navigateBackToProfileScreen();
     }
 }

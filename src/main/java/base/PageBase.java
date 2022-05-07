@@ -96,17 +96,6 @@ public class PageBase {
 
     }
 
-    public void moveToElementAndClick(By element){
-        waitFor(ExpectedConditions.visibilityOfElementLocated(element), Duration.ofSeconds(15));
-        WebElement clickableElement = driver.findElement(element);
-        System.out.println("Clicked successfully on [" + clickableElement.getText() + "]");
-        Actions action = new Actions(driver);
-        action.moveToElement(clickableElement)
-                .click()
-                .build()
-                .perform();
-    }
-
     public void scrollDown() {
         Dimension dimension = driver.manage().window().getSize();
         int scrollStart = (int) (dimension.getHeight() * 0.8);

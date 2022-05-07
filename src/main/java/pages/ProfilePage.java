@@ -21,6 +21,8 @@ public class ProfilePage extends PageBase {
     private By gotItBtn             = By.id("com.runtastic.android:id/explanationCta");
     private By backBtn              = By.xpath("hierarchy//android.widget.Button[1]");
     private By secondBackBtn        = By.xpath("hierarchy//android.widget.ImageButton[@content-desc='Navigate up']");
+    private By pointsInfoViewScreen = By.id("com.runtastic.android:id/pointsInfoViewTitle");
+    private By howToEarnPointsHeader= By.xpath("hierarchy//android.widget.TextView");
 
 
     public By goToProfileScreen() {
@@ -44,21 +46,26 @@ public class ProfilePage extends PageBase {
         return click(adiClubPassScreen);
     }
 
+    public By goToPointsInfoViewScreen() {
+        return click(pointsInfoViewScreen);
+    }
+
     public By clickGotItButton() {
         return click(gotItBtn);
     }
-
-    public void navigateBackToProfileScreen() {
-        click(backBtn);
-        click(secondBackBtn);
-
-    }
-
 
     public String getAdiClubPassNumberText(){
         return getTextFromUI(adiClubPassNumber);
     }
 
+    public String getHowToEarnPointsHeaderText(){
+        return getTextFromUI(howToEarnPointsHeader);
+    }
+
+    public void navigateBackToProfileScreen() {
+        click(backBtn);
+        click(secondBackBtn);
+    }
 
     public void logOutFromApp() {
         click(profileBtn);
