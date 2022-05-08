@@ -30,5 +30,3 @@ We are using DDT frameworks in the project with allure report
 ####4-Can add or remove tags based on the regression run
 ####5-Check the cucumber report from --> target/cucumber-results/report.html
 ####6-Created 2 branches which is develop and master, we code on develop branch and merge with master afterwards
-
-<img src="images\runtasticTraning.png" style="display:block; margin-left:auto; margin-right:auto;"/>
