@@ -23,6 +23,8 @@ public class ProfilePage extends PageBase {
     private By secondBackBtn        = By.xpath("hierarchy//android.widget.ImageButton[@content-desc='Navigate up']");
     private By pointsInfoViewScreen = By.id("com.runtastic.android:id/pointsInfoViewTitle");
     private By howToEarnPointsHeader= By.xpath("hierarchy//android.widget.TextView");
+    private By checkPointsHistoryScreen = By.xpath("hierarchy//android.widget.LinearLayout[@content-desc='HISTORY']");
+    private By historyHeader        = By.id("com.runtastic.android:id/engagementDate");
 
 
     public By goToProfileScreen() {
@@ -36,7 +38,6 @@ public class ProfilePage extends PageBase {
     public String getCurrentLevelText(){
         return getTextFromUI(currentLvlTxt);
     }
-
 
     public By goToShowMoreScreen() {
         return click(showMoreTab);
@@ -62,9 +63,17 @@ public class ProfilePage extends PageBase {
         return getTextFromUI(howToEarnPointsHeader);
     }
 
+    public String getHistoryText(){
+        return getTextFromUI(historyHeader);
+    }
+
+    public void goToCheckPointsHistoryScreen() {
+        click(checkPointsHistoryScreen);
+    }
+
     public void navigateBackToProfileScreen() {
-        click(backBtn);
-        click(secondBackBtn);
+        driver.navigate().back();
+        driver.navigate().back();
     }
 
     public void logOutFromApp() {

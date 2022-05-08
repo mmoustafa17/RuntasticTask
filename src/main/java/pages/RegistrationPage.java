@@ -36,7 +36,8 @@ public class RegistrationPage extends PageBase {
     private By primaryBtn                       = By.id("com.runtastic.android:id/primaryButton");
 
 
-    public String registerNewUser(String fName, String lName, String genderType, String usedEmail, String passwd) {
+    public String registerNewUser(String fName, String lName, String genderType, String usedEmail
+            , String passwd,String month,String day,String year) {
         type(firstNameTxt, fName);
         type(lastNameTxt, lName);
 
@@ -57,13 +58,13 @@ public class RegistrationPage extends PageBase {
         click(birthdatePicker);
 
         click(monthDatePicker);
-        type(monthDatePicker,"Jun");
+        type(monthDatePicker,month);
 
         click(dayDatePicker);
-        type(dayDatePicker,"17");
+        type(dayDatePicker,day);
 
         click(yearDatePicker);
-        type(yearDatePicker,"1989");
+        type(yearDatePicker,year);
 
         click(dateOkBtn);
         click(joinBtn);
