@@ -37,7 +37,6 @@ public class PageBase {
     protected PageBase(AppiumDriver appiumDriver) {
         this.driver = appiumDriver;
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
-
     }
 
     public void waitForVisibility(By element) {
@@ -79,11 +78,11 @@ public class PageBase {
         waitFor(ExpectedConditions.visibilityOfElementLocated(element), Duration.ofSeconds(15));
         WebElement textElement = driver.findElement(element);
         String text = textElement.getText();
-        System.out.println("Text found on UI as [" + text + "] in " );
+        System.out.println("Text found on UI as [" + text + "] in ");
         return text;
     }
 
-    public void moveToElementAndType(By element, String inputText){
+    public void moveToElementAndType(By element, String inputText) {
         waitFor(ExpectedConditions.visibilityOfElementLocated(element), Duration.ofSeconds(15));
         WebElement textElement = driver.findElement(element);
         textElement.clear();
@@ -94,6 +93,17 @@ public class PageBase {
                 .perform();
         System.out.println("Typed successfully [" + inputText + "]");
 
+    }
+
+    public void moveToElementAndClick(By element) {
+        waitFor(ExpectedConditions.visibilityOfElementLocated(element), Duration.ofSeconds(15));
+        WebElement textElement = driver.findElement(element);
+        System.out.println("Clicked successfully [" + textElement + "]");
+        Actions action = new Actions(driver);
+        action.moveToElement(textElement)
+                .click()
+                .build()
+                .perform();
     }
 
     public void scrollDown() {
