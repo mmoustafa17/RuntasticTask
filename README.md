@@ -2,8 +2,8 @@
 <img src="images\AdiLogo.png" style="display:block; margin-left:auto; margin-right:auto;"/>
 
 # Automation FrameWork
-FrameWork using Appium with Java , Maven , TestNG and POM design pattern
-We are using DDT frameworks in the project with allure report
+Appium Framework using Java, Maven, TestNG, and POM design pattern
+The project uses BDD framework
 
 ### Tech stach:
 - Java
