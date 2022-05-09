@@ -47,6 +47,7 @@ public class RegistrationPage extends PageBase {
                 break;
             case "Female":
                 click(femaleBtn);
+                break;
             case "PreferNotToSay":
                 click(preferNotToSayBtn);
                 break;

@@ -30,6 +30,8 @@ public class TestBase {
 
 	public static AppiumDriver driver;
 
+	static String envRequired = utilities.LoadProperties.userData.getProperty("TestingEnvironment");
+
 	public static void AndroidSetUp() throws MalformedURLException {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platformName", "Android");
@@ -37,8 +39,21 @@ public class TestBase {
 		capabilities.setCapability("deviceName", "Android Emulator");
 		capabilities.setCapability("appActivity", "com.runtastic.android.activities.StartActivity");
 		capabilities.setCapability("appPackage", "com.runtastic.android");
-		capabilities.setCapability("app",
-				System.getProperty("user.dir") + "/application/Running.apk");
+
+		switch (envRequired) {
+			case "Testing":
+				capabilities.setCapability("app",
+						System.getProperty("user.dir") + "/application/Running.apk");
+				break;
+			case "Staging":
+				capabilities.setCapability("app",
+						System.getProperty("user.dir") + "/application/Running.apk");
+			case "PreProd":
+				capabilities.setCapability("app",
+						System.getProperty("user.dir") + "/application/Running.apk");
+				break;
+		}
+
 		capabilities.setCapability("chromedriverExecutable",WebDriverManager.chromedriver().getBinaryPath());
 		driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), capabilities);
 	}

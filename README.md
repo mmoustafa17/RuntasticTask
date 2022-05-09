@@ -36,4 +36,6 @@ We are using DDT frameworks in the project with allure report
 
 6-Created 2 branches which is develop and master, we code on develop branch and merge with master afterwards
 
+7-We can change the environment from properties file in --> src/test/resources/Properties/userdata.properties
+
 <img src="images\runtasticTraning.png" style="display:block; margin-left:auto; margin-right:auto;"/>
